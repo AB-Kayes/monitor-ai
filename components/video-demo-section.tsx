@@ -40,41 +40,33 @@ export default function VideoDemoSection() {
         <div className="grid md:grid-cols-5 gap-8 items-center">
           {/* Main Video */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="relative md:col-span-3"
-          >
-            <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-800 shadow-2xl border border-white/60">
-              {/* Video Element */}
-              <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
-                <source src={videoDemo.video.src} type="video/mp4" />
-                {/* Fallback for browsers that don't support video */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <Play className="w-16 h-16 mx-auto mb-4 opacity-80" />
-                    <p className="text-lg font-medium">Demo Video</p>
-                    <p className="text-sm opacity-80">AI Tool in Action</p>
-                  </div>
-                </div>
-              </video>
-
-              {/* Play Button Overlay */}
-              <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                  <Play className="w-8 h-8 text-white ml-1" />
-                </div>
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative md:col-span-5 flex justify-center items-center"
+            >
+              <div className="relative w-full max-w-4xl aspect-video rounded-2xl overflow-hidden bg-slate-800 shadow-2xl border border-white/60 flex items-center justify-center mx-auto">
+                {/* Video Element with Controls */}
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  poster={videoDemo.video.poster}
+                  playsInline
+                >
+                  <source src={videoDemo.video.src} type="video/mp4" />
+                  {/* Fallback for browsers that don't support video */}
+                  Sorry, your browser does not support embedded videos.
+                </video>
               </div>
-            </div>
 
-            {/* Decorative Elements */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-400/30 rounded-full blur-xl" />
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-400/30 rounded-full blur-xl" />
-          </motion.div>
+              {/* Decorative Elements */}
+              <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-400/30 rounded-full blur-xl" />
+              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-400/30 rounded-full blur-xl" />
+            </motion.div>
 
           {/* UI Screenshots */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -97,7 +89,7 @@ export default function VideoDemoSection() {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
 
         <motion.div
@@ -108,9 +100,12 @@ export default function VideoDemoSection() {
           className="text-center mt-12"
         >
           <p className="text-slate-600 mb-8">{videoDemo.cta.description}</p>
-          <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border border-blue-400/30">
+          <button
+            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border border-blue-400/30"
+            onClick={() => window.open("https://www.aaladinai.com/contact", "_blank")}
+            >
             {videoDemo.cta.text}
-          </button>
+            </button>
         </motion.div>
       </div>
     </section>

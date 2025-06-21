@@ -277,7 +277,7 @@ export const websiteConfig: WebsiteConfig = {
     title: "Watch Monitor AI in Action",
     subtitle: "How we solve online class issues in real time",
     video: {
-      src: "/videos/monitorai-demo.mp4",
+      src: "/monitorAI.mp4",
       poster: "/images/monitorai-poster.jpg",
     },
     uiScreenshots: [
@@ -293,7 +293,7 @@ export const websiteConfig: WebsiteConfig = {
       },
     ],
     cta: {
-      text: "Request Early Access",
+      text: "Contact Us for Demo",
       description: "Schools and parents can now sign up for private beta access.",
     },
   },

@@ -9,7 +9,7 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <HeroSection />
       <ProblemSolutionSection />
-      {/* <VideoDemoSection /> */}
+      <VideoDemoSection />
       <FeaturesSection />
       {/* <HowItWorksSection /> */}
     </main>
